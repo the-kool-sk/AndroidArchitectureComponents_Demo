@@ -18,7 +18,6 @@ public class BindingClass implements LifecycleObserver {
             this.lifecycleOwner=lifecycleOwner;
             lifecycleOwner.getLifecycle().addObserver(this);
             Log.i("ActivityLifeCycleStatus", lifecycleOwner.getLifecycle().getCurrentState().toString()+" State");
-
         }
 
         @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
@@ -65,8 +64,9 @@ public class BindingClass implements LifecycleObserver {
 
         @OnLifecycleEvent(Lifecycle.Event.ON_ANY)
     void anEvent(){
-         //Log.i("ActivityLifeCycleStatus", "Any-ObserverEvent");
-           // Log.i("ActivityLifeCycleStatus", lifecycleOwner.getLifecycle().getCurrentState().toString()+" State");
+
+         Log.i("ActivityLifeCycleStatus", "Any-ObserverEvent");
+         Log.i("ActivityLifeCycleStatus", lifecycleOwner.getLifecycle().getCurrentState().toString()+" State");
      }
 
     }

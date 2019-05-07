@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="callback"
+            type="com.example.demoapp.ui.ClickCallBack" />
+        <variable
+            name="user"
+            type="com.example.demoapp.model.User" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/containerLL"
+        android:onClick="@{() -> callback.onclick()}">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/itemTV"
+        android:textSize="25sp"
+        android:text="@{user.user_display_name}"
+        android:padding="10dp"/>
+    </LinearLayout>
+</layout>

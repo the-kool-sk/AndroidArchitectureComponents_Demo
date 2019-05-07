@@ -1,68 +1,78 @@
 package com.example.demoapp.room;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
-import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
 
 import com.example.demoapp.model.User;
 
 @Entity(tableName = "UserTB")
 public class userEntity implements User {
 
-    private String userName
-            ,userEmail
-            ,userMobNum
-            ,userPhoto;
+    @PrimaryKey(autoGenerate = true)
+    @NonNull
+    private int ID;
+    private String user_display_name;
+    private String user_email;
+    private String user_photo;
+    private String user_mob_num;
 
 
-    @Ignore
-    public userEntity(String userName, String userEmail, String userMobNum, String userPhoto) {
-        this.userName = userName;
-        this.userEmail = userEmail;
-        this.userMobNum = userMobNum;
-        this.userPhoto = userPhoto;
+    public userEntity(String user_display_name, String user_email, String user_photo, String user_mob_num) {
+        this.user_display_name = user_display_name;
+        this.user_email = user_email;
+        this.user_photo = user_photo;
+        this.user_mob_num = user_mob_num;
     }
 
     public userEntity(User user) {
-        this.userName = user.getUserName();
-        this.userEmail = user.getUserEmail();
-        this.userMobNum = user.getUserMobNum();
-        this.userPhoto = user.getUserPhoto();
+        this.user_display_name = user.getUser_display_name();
+        this.user_email = user.getUser_email();
+        this.user_photo = user.getUser_photo();
+        this.user_mob_num = user.getUser_mob_num();
     }
 
-
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public int getID() {
+        return ID;
     }
 
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
-    public void setUserMobNum(String userMobNum) {
-        this.userMobNum = userMobNum;
+    public void setUser_display_name(String user_display_name) {
+        this.user_display_name = user_display_name;
     }
 
-    public void setUserPhoto(String userPhoto) {
-        this.userPhoto = userPhoto;
+    public void setUser_email(String user_email) {
+        this.user_email = user_email;
     }
 
-    @Override
-    public String getUserName() {
-        return this.userName;
+    public void setUser_photo(String user_photo) {
+        this.user_photo = user_photo;
     }
 
-    @Override
-    public String getUserEmail() {
-        return this.userEmail;
+    public void setUser_mob_num(String user_mob_num) {
+        this.user_mob_num = user_mob_num;
     }
 
     @Override
-    public String getUserMobNum() {
-        return this.userMobNum;
+    public String getUser_display_name() {
+        return this.user_display_name;
     }
 
     @Override
-    public String getUserPhoto() {
-        return this.userPhoto;
+    public String getUser_email() {
+        return this.user_email;
+    }
+
+    @Override
+    public String getUser_photo() {
+        return this.user_photo;
+    }
+
+    @Override
+    public String getUser_mob_num() {
+        return this.user_mob_num;
     }
 }

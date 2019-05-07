@@ -1,5 +1,6 @@
 package com.example.demoapp.model;
 
+import com.example.demoapp.room.userEntity;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -18,7 +19,7 @@ public class UserResponceModel {
     private String message;
     @SerializedName("data")
     @Expose
-    private List<User> data = null;
+    private List<userEntity> data = null;
 
     /**
      * No args constructor for use in serialization
@@ -34,7 +35,7 @@ public class UserResponceModel {
      * @param data
      * @param statusMessage
      */
-    public UserResponceModel(Integer statusCode, String statusMessage, String message, List<User> data) {
+    public UserResponceModel(Integer statusCode, String statusMessage, String message, List<userEntity> data) {
         super();
         this.statusCode = statusCode;
         this.statusMessage = statusMessage;
@@ -66,11 +67,11 @@ public class UserResponceModel {
         this.message = message;
     }
 
-    public List<User> getData() {
+    public List<userEntity> getData() {
         return data;
     }
 
-    public void setData(List<User> data) {
+    public void setData(List<userEntity> data) {
         this.data = data;
     }
 

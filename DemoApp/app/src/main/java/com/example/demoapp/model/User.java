@@ -2,8 +2,8 @@ package com.example.demoapp.model;
 
 public interface User {
 
-    String getUserName();
-    String getUserEmail();
-    String getUserMobNum();
-    String getUserPhoto();
+    String getUser_display_name();
+    String getUser_email();
+    String getUser_photo();
+    String getUser_mob_num();
 }

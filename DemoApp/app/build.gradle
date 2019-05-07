@@ -45,5 +45,8 @@ dependencies {
 
     implementation 'com.google.guava:guava:27.0.1-android'
 
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.1'
+
+
 
 }
