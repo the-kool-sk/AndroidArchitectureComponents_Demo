@@ -7,6 +7,9 @@
         <variable
             name="profile"
             type="com.example.demoapp.model.User" />
+        <variable
+            name="userImage"
+            type="String" />
     </data>
 
 <LinearLayout
@@ -22,7 +25,7 @@
         android:padding="10dp"
         android:layout_marginTop="10dp"
         android:id="@+id/userpicIV"
-        android:src="@{profile.user_photo}"/>
+        app:user_photo="@{userImage}"/>
 
     <TextView
         android:layout_width="match_parent"

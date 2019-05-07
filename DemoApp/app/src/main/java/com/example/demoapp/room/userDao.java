@@ -8,6 +8,8 @@ import androidx.room.Query;
 import androidx.room.RawQuery;
 import androidx.sqlite.db.SimpleSQLiteQuery;
 
+import com.example.demoapp.model.User;
+
 import java.util.List;
 
 @Dao
@@ -20,4 +22,7 @@ public interface userDao {
 
     @Query("SELECT user_display_name, ID from usertb")
     LiveData<List<userEntity>> selectnames();
+
+    @Query("SELECT * from usertb Where ID IN(:id)")
+    LiveData<userEntity> getuser(int id);
 }

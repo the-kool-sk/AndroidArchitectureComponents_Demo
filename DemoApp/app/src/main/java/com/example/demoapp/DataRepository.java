@@ -88,4 +88,8 @@ public class DataRepository {
         return mDatabase.userDao().selectnames();
   }
 
+  public LiveData<userEntity> getuser(int productID){
+        return mDatabase.userDao().getuser(productID);
+  }
+
 }
