@@ -1,6 +1,7 @@
 package com.example.demoapp.ui;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.demoapp.R;
 import com.example.demoapp.databinding.ActivityMainBinding;
+import com.example.demoapp.model.User;
 import com.example.demoapp.room.userEntity;
 import com.example.demoapp.viewmodel.UserListViewModel;
 
@@ -49,7 +51,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    private final ClickCallBack mclickcallback = () ->
-            Toast.makeText(getApplicationContext(),"itemclicked",Toast.LENGTH_SHORT).show();
+    private final ClickCallBack mclickcallback = new ClickCallBack() {
+        @Override
+        public void onclick(User user) {
+            Intent intent = new Intent(getApplicationContext(),UserDetailsActivity.class);
+            intent.putExtra("key",user.getID());
+            startActivity(intent);
+
+        }
+    };
 
 }

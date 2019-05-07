@@ -50,6 +50,11 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.userHolder> {
         return list.size();
     }
 
+    @Override
+    public long getItemId(int position) {
+        return list.get(position).getID();
+    }
+
     public static class userHolder extends RecyclerView.ViewHolder{
 
         ListitemBinding binding;

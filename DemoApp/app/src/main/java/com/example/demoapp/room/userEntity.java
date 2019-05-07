@@ -30,6 +30,7 @@ public class userEntity implements User {
         this.user_email = user.getUser_email();
         this.user_photo = user.getUser_photo();
         this.user_mob_num = user.getUser_mob_num();
+        this.ID=user.getID();
     }
 
     public int getID() {
@@ -75,4 +76,6 @@ public class userEntity implements User {
     public String getUser_mob_num() {
         return this.user_mob_num;
     }
+
+
 }

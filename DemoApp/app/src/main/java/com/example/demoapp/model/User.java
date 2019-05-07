@@ -6,4 +6,5 @@ public interface User {
     String getUser_email();
     String getUser_photo();
     String getUser_mob_num();
+    int getID();
 }
