@@ -14,13 +14,4 @@ public interface User {
     String getUser_photo();
     String getUser_mob_num();
     int getID();
-
-    @BindingAdapter({"user_photo"})
-    public static void loadimage(ImageView imageView, String url)
-    {
-        Glide.with(imageView.getContext())
-                .load(url)
-                .centerCrop()
-                .into(imageView);
     }
-}
