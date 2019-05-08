@@ -32,7 +32,6 @@ public class UserDetailsActivity extends AppCompatActivity {
             @Override
             public void onChanged(User user) {
                 binding.setProfile(user);
-                binding.setUserImage(user.getUser_photo());
             }
         });
     }
