@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         listAdapter= new ListAdapter(mclickcallback);
        // binding.userListRV.setLayoutManager(new LinearLayoutManager(this));
         binding.userListRV.setAdapter(listAdapter);
+        binding.setLifecycleOwner(this);
         new MainActivityLifeCycleObserver(this,this);
         final UserListViewModel userListViewModel = ViewModelProviders.of(this).get(UserListViewModel.class);
         subscribeUI(userListViewModel.getObserveableusers());
