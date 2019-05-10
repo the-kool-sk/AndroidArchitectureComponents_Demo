@@ -69,6 +69,10 @@ public class DataRepository {
 
     }
 
+    public void insertuser(userEntity user) {
+        new insertask().execute(user);
+    }
+
     static class task extends AsyncTask<List<userEntity>,Void,Void>{
 
         AppDatabase appDatabase;
@@ -85,11 +89,19 @@ public class DataRepository {
     }
    public LiveData<List<userEntity>> loadListfromdb()
   {
-        return mDatabase.userDao().selectnames();
+      return mDatabase.userDao().selectnames();
+
   }
 
   public LiveData<userEntity> getuser(int productID){
         return mDatabase.userDao().getuser(productID);
   }
 
+    private class insertask extends AsyncTask<userEntity,Void,Void>{
+              @Override
+        protected Void doInBackground(userEntity... users) {
+            mDatabase.userDao().insertuser(users[0]);
+            return null;
+        }
+    }
 }

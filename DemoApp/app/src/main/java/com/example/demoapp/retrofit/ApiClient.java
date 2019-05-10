@@ -10,7 +10,8 @@ public class ApiClient {
     public static final String BASE_URL = "https://shopnearme.3utilities.com/php/server/";
     private static Retrofit retrofit = null;
 
-
+    private ApiClient() {
+    }
 
     public static Retrofit getClient() {
         if (retrofit==null) {

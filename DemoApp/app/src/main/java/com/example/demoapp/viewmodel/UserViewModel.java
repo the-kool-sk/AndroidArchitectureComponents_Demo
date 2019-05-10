@@ -24,10 +24,10 @@ public class UserViewModel extends AndroidViewModel {
     LiveData<? extends User> mobservabledata;
     private final DataRepository mRepository;
 
-    public UserViewModel(@NonNull Application application, int productID) {
+    public UserViewModel(@NonNull Application application, int userID) {
         super(application);
         mRepository = DataRepository.getInstance(AppDatabase.getInstance(application.getApplicationContext()));
-        mobservabledata=mRepository.getuser(productID);
+        mobservabledata=mRepository.getuser(userID);
     }
 
     public LiveData<? extends User> getObserveableuser()

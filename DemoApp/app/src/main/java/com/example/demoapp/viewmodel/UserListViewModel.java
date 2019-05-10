@@ -7,6 +7,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 import com.example.demoapp.DataRepository;
+import com.example.demoapp.model.User;
 import com.example.demoapp.room.AppDatabase;
 import com.example.demoapp.room.userEntity;
 
@@ -29,4 +30,8 @@ public class UserListViewModel extends AndroidViewModel {
         return mobservabledata;
     }
 
+    public void insertUser() {
+        userEntity user = new userEntity("Ritesh","dynamo@gmail.com",null,"9999999999");
+        mRepository.insertuser(user);
+    }
 }

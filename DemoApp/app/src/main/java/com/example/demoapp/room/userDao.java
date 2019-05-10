@@ -25,4 +25,7 @@ public interface userDao {
 
     @Query("SELECT * from usertb Where ID IN(:id)")
     LiveData<userEntity> getuser(int id);
+
+    @Insert
+    void insertuser(userEntity user);
 }

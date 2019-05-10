@@ -12,6 +12,8 @@ import com.example.demoapp.databinding.ListitemBinding;
 import com.example.demoapp.model.User;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.userHolder> {
@@ -23,17 +25,19 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.userHolder> {
         this.clickcallback = clickcallback;
     }
 
-    public void setUserList(List<? extends User> userList){
-            list=userList;
-            notifyDataSetChanged();
-            //notifyItemRangeInserted(0,userList.size());
+    public void setUserList(List<? extends User> userList) {
+        list = userList;
+        Collections.reverse(list);
+
+        notifyDataSetChanged();
+        //notifyItemRangeInserted(0,userList.size());
     }
 
     @NonNull
     @Override
     public userHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ListitemBinding listitemBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.listitem,
-                parent,false);
+                parent, false);
         listitemBinding.setCallback(clickcallback);
         return new userHolder(listitemBinding);
     }
@@ -55,12 +59,13 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.userHolder> {
         return list.get(position).getID();
     }
 
-    public static class userHolder extends RecyclerView.ViewHolder{
+    public static class userHolder extends RecyclerView.ViewHolder {
 
         ListitemBinding binding;
+
         public userHolder(ListitemBinding binding) {
             super(binding.getRoot());
-            this.binding=binding;
+            this.binding = binding;
 
         }
     }
