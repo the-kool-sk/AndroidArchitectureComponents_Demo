@@ -49,6 +49,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void subscribeUI(LiveData<List<userEntity>> observeableusers) {
+        observeableusers.observe(this, new Observer<List<userEntity>>() {
+            @Override
+            public void onChanged(List<userEntity> userEntities) {
+                if (userEntities != null) {
+                    listAdapter.setUserList(userEntities);
+                    Log.i("OnChange", "called");
+                }
+                binding.executePendingBindings();
+            }
+        });
+
+/* // With Lambda function
+    private void subscribeUI(LiveData<List<userEntity>> observeableusers) {
         observeableusers.observe(this, userEntities -> {
         if(userEntities!=null)
         {
@@ -58,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
         binding.executePendingBindings();
 
         });
+    }*/
     }
     private final ClickCallBack mclickcallback = user -> {
         Intent intent = new Intent(getApplicationContext(),UserDetailsActivity.class);

@@ -18,4 +18,14 @@ public class BindingAdapters {
                 .placeholder(R.drawable.ic_launcher_background)
                 .into(imageView);
     }
+
+    /*@BindingAdapter({"android:src"})
+    public static void loadimage(ImageView imageView, String url)
+    {
+        Glide.with(imageView.getContext())
+                .load(url)
+                .centerInside()
+                .placeholder(R.drawable.ic_launcher_background)
+                .into(imageView);
+    }*/
 }

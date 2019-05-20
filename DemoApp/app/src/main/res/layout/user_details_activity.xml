@@ -24,6 +24,16 @@
         android:id="@+id/userpicIV"
         app:user_photo="@{profile.user_photo}"/>
 
+ <!--   <ImageView
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:layout_gravity="center_horizontal"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/userpicIV"
+        android:src="@{profile.user_photo}"
+        />-->
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
