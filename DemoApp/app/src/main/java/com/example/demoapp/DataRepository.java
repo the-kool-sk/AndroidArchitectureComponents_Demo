@@ -86,6 +86,12 @@ public class DataRepository {
             appDatabase.userDao().insertUsers(lists[0]);
             return null;
         }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+
+            super.onPostExecute(aVoid);
+        }
     }
    public LiveData<List<userEntity>> loadListfromdb()
   {

@@ -1,0 +1,17 @@
+1. Dependencies Add
+   Room, Retrofit, LiveData and ViewModel, RecyclerView
+2. Internet Permission
+3. Packages - > Model, Retrofit, Room, UI, viewModel
+4. User (Interface)
+5. Entity (Class)
+6. Dao (interface)
+7. AppDatabase (Abstract Class)
+8. Retrofit Responce Model (Class)
+9. Retrofit ApiClient(Class)
+10. Retrofit Endpoints(Class)
+11. DataRepository Class
+12. TurnOnDatabinding in gradle file
+13. android.useAndroidX=true
+    android.enableJetifier=true in gradle.properties file
+14. Create View model Class extend with Android View Model
+15. ListItem Layout file

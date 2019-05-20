@@ -3,6 +3,7 @@ package com.example.demoapp.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         if(userEntities!=null)
         {
             listAdapter.setUserList(userEntities);
+            Log.i("OnChange","called");
         }
         binding.executePendingBindings();
 

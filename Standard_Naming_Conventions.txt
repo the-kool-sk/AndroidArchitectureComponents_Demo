@@ -1,0 +1,12 @@
+Variables - firstLetterOfFirstWordSmallSubsequentWord'sFirstLetterCaps
+Packages - allletterssmallcase
+Functions - firstLetterOfFirstWordSmallSubsequentWord'sFirstLetterCaps
+Classes - CamelCase
+Interfaces- CamelCase
+Constants - ALLCAPS_CASE
+layouts-snake_case
+resources - snake_case
+Strings - snake_case
+TableName - snake_case
+ColumnName - snake_case
+DatabaseName - this-is-my-db-case

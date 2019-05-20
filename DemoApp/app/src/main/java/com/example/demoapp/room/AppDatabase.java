@@ -62,16 +62,14 @@ public abstract class AppDatabase extends RoomDatabase {
      * Check whether the database already exists and expose it via {@link #getDatabaseCreated()}
      */
     private void updateDatabaseCreated(final Context context) {
-        if (context.getDatabasePath(DATABASE_NAME).exists()) {
-            setDatabaseCreated();
-        }
+        setDatabaseCreated();
     }
 
     private void setDatabaseCreated(){
         mIsDatabaseCreated.postValue(true);
     }
 
-    public LiveData<Boolean> getDatabaseCreated() {
+    public MutableLiveData<Boolean> getDatabaseCreated() {
         return mIsDatabaseCreated;
     }
 

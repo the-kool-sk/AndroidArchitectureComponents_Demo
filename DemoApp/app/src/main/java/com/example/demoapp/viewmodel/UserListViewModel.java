@@ -24,7 +24,7 @@ public class UserListViewModel extends AndroidViewModel {
         mobservabledata=mRepository.loadListfromdb();
 
     }
-
+    //Expose
     public LiveData<List<userEntity>> getObserveableusers()
     {
         return mobservabledata;

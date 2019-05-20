@@ -1,5 +1,6 @@
 package com.example.demoapp.ui;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -18,7 +19,7 @@ import java.util.List;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.userHolder> {
 
-    private List<? extends User> list = new ArrayList<>();
+    private List<User> list = new ArrayList<>();
     private ClickCallBack clickcallback;
 
     public ListAdapter(ClickCallBack clickcallback) {
@@ -26,7 +27,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.userHolder> {
     }
 
     public void setUserList(List<? extends User> userList) {
-        list = userList;
+        list.addAll(userList);
+//        list = userList;
         Collections.reverse(list);
 
         notifyDataSetChanged();
@@ -44,6 +46,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.userHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull userHolder holder, int position) {
+        Log.i("setDataToHolder","called");
         holder.binding.setUser(list.get(position));
         holder.binding.executePendingBindings();
 

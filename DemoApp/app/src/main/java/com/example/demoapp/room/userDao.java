@@ -28,4 +28,5 @@ public interface userDao {
 
     @Insert
     void insertuser(userEntity user);
+
 }

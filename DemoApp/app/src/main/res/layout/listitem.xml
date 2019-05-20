@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/itemTV"
         android:textSize="25sp"
-        android:text="@{user.user_display_name}"
+        android:text="@{safeUnbox(user.user_display_name)}"
         android:padding="10dp"/>
     </LinearLayout>
 </layout>
