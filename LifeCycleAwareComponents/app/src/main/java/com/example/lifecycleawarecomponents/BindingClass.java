@@ -1,7 +1,5 @@
 package com.example.lifecycleawarecomponents;
 
-import android.content.Context;
-import android.location.LocationListener;
 import android.util.Log;
 
 import androidx.lifecycle.Lifecycle;
