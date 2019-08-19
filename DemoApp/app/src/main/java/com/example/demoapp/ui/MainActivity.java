@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main);
         binding= DataBindingUtil.setContentView(this,R.layout.activity_main);
         listAdapter= new ListAdapter(mclickcallback);
        // binding.userListRV.setLayoutManager(new LinearLayoutManager(this));
@@ -40,12 +40,7 @@ public class MainActivity extends AppCompatActivity {
         new MainActivityLifeCycleObserver(this,this);
         final UserListViewModel userListViewModel = ViewModelProviders.of(this).get(UserListViewModel.class);
         subscribeUI(userListViewModel.getObserveableusers());
-        binding.btAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                userListViewModel.insertUser();
-            }
-        });
+        binding.btAdd.setOnClickListener(v -> userListViewModel.insertUser());
     }
 
     private void subscribeUI(LiveData<List<userEntity>> observeableusers) {

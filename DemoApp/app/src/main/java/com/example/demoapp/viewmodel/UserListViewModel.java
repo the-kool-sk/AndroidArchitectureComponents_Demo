@@ -29,7 +29,6 @@ public class UserListViewModel extends AndroidViewModel {
     {
         return mobservabledata;
     }
-
     public void insertUser() {
         userEntity user = new userEntity("Ritesh","dynamo@gmail.com",null,"9999999999");
         mRepository.insertuser(user);
