@@ -10,3 +10,4 @@ Strings - snake_case
 TableName - snake_case
 ColumnName - snake_case
 DatabaseName - this-is-my-db-case
+LiveDataVaiable - _userName
