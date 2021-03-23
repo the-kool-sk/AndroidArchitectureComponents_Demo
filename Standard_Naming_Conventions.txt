@@ -1,9 +1,8 @@
-Variables - firstLetterOfFirstWordSmallSubsequentWord'sFirstLetterCaps
-Packages - allletterssmallcase
-Functions - firstLetterOfFirstWordSmallSubsequentWord'sFirstLetterCaps
-Classes - CamelCase
-Interfaces- CamelCase
-Constants - ALLCAPS_CASE
+FileNames - UpperCamelCase.kt
+Packages - allletterssmallcase (do not use underscores) to seperate words you can use camleCase but avoid doing that.
+Classes and object - CamelCase
+functions, properties and local variables - lowercase letter and use camel case and NO underscores (firstLetterOfFirstWordSmallSubsequentWord'sFirstLetterCaps)
+Constants (properties marked with const, or top-level or object val) - uppercase underscore-separated names (screaming snake case) (ALLCAPS_CASE)
 layouts-snake_case
 resources - snake_case
 Strings - snake_case
@@ -11,3 +10,9 @@ TableName - snake_case
 ColumnName - snake_case
 DatabaseName - this-is-my-db-case
 LiveDataVaiable - _userName
+
+Arrange members in classes in below order : 
+Property declarations and initializer blocks
+Secondary constructors
+Method declarations
+Companion object
